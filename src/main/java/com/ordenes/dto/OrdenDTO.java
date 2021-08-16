@@ -1,6 +1,9 @@
 package com.ordenes.dto;
 
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.ordenes.util.IConstantes;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,6 +32,7 @@ public class OrdenDTO implements Serializable {
     @NotNull
     private Long valorTotal;
 
+    @JsonFormat(pattern = IConstantes.PATTERN_DATE_CLIENTE, timezone = IConstantes.ZONA_HORARIA_COLOMBIA)
     private Date fechaReg;
 
     private String codigoSeguimiento;
